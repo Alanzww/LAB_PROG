@@ -1,1 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int count_positivo = 0;
+    int count_negativo = 0;
+    int count_zero = 0;
+    int total_num;
+    int casas_num;
+
+    printf("Digite a quantidade de números que deseja inserir: ");
+    scanf("%d", &total_num);
+
+    for(int i = 1;i <= total_num;i++){
+        printf("Digite um número para a posição %d: ", i);
+        scanf("%d", &casas_num);
+        
+        if(casas_num == 0){
+            printf("%d é um número nulo\n", i);
+            count_zero++;
+        }
+        else if(casas_num > 0){ 
+            printf("%d é um número positivo\n", i);
+            count_positivo++;
+        }
+        else{
+            printf("%d é um número negativo\n", i);
+            count_negativo++;
+        }
+    }
+    
+    printf("Para a quantidade %d de números inseridos %d são positivos!\n", total_num, count_positivo);
+    printf("Para a quantidade %d de números inseridos %d negativos!\n", total_num, count_negativo);
+    printf("Para a quantidade %d de números inseridos %d são nulos!\n", total_num, count_zero);
+    return 0;
+}
 
