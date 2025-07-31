@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    
+    int n;
+    int soma_valores = 0;
+    float media = 0;
+    int contador = 0;
+    
+    printf("Insira um valor para N números reais: ");
+    scanf("%d", &n);
+    
+    int vetor[n];
+    
+    for(int i=0;i<n;i++){
+        printf("Insira um valor para a posição %d: ", i);
+        scanf("%d", &vetor[i]);
+        
+        soma_valores += vetor[i];
+    }
+    
+    media = (float)soma_valores/n;
+    
+    for(int i=0;i<n;i++){
+        if(vetor[i] > media){
+            printf("[%d] ", vetor[i]);
+            contador++;
+        }
+    }
+    
+    if(contador == 0){
+        printf("Não existe valor maior que a média.\n");
+    }
+    return 0;
+    }
