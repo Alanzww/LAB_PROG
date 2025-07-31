@@ -3,6 +3,7 @@
 
 int main(){
     
+    int *vetor;
     int n;
     int soma_valores = 0;
     float media = 0;
@@ -11,7 +12,11 @@ int main(){
     printf("Insira um valor para N números reais: ");
     scanf("%d", &n);
     
-    int vetor[n];
+    vetor = (int*) malloc(n * sizeof(int));
+    
+    if(vetor == NULL){
+        return 1;
+    }
     
     for(int i=0;i<n;i++){
         printf("Insira um valor para a posição %d: ", i);
@@ -32,5 +37,6 @@ int main(){
     if(contador == 0){
         printf("Não existe valor maior que a média.\n");
     }
+    free(vetor);
     return 0;
     }
